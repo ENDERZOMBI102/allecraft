@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "transform": "forge:default-block"
+  },
+  "variants": {
+    "normal"   : { "model": "sau:leaves_rubber" },
+    "inventory": { "model": "sau:leaves_rubber" }
+  }
+}

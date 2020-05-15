@@ -1,0 +1,12 @@
+#blocks
+tile.rubber_log.name=Rubber Log
+tile.rubber_plank.name=Rubber Planks
+tile.rubber_stripped.name=Stripped Rubber Log
+tile.rubber_leaves.name=Rubber Leaves
+tile.faucelet.name=Faucelet
+
+#items
+item.coagulated_latex.name=Coagulated Latex
+
+#GUI
+itemGroup.sau=Skyblock Ages Utils

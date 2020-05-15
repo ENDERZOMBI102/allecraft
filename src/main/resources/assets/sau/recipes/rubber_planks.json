@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "sau:rubber_log"
+		}
+	],
+	"result": {
+		"item": "sau:rubber_plank"
+		"count": 4
+	}
+}

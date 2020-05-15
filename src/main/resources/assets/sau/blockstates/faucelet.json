@@ -1,0 +1,12 @@
+{
+	"forge_marker": 1,
+	"variants": {
+		"normal": {
+			"model": "sau:faucelet"
+		},
+		"inventory": {
+			"model": "sau:faucelet",
+			"transform": "forge:default-block"
+		}
+	}
+}

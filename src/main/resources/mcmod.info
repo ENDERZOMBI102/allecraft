@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "sau",
+  "name": "Skyblock Ages Utils",
+  "description": "A mod for the Skyblock Ages modpack.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://github.com/ENDERZOMBI102/allecraft",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["ENDERZOMBI102"],
+  "credits": "Made by ENDERZOMBI102 for Allecraft's modpack Skyblock Ages",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

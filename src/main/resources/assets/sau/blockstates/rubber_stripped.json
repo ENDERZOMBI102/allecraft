@@ -1,0 +1,17 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "transform": "forge:default-block",
+        "model": "sau:rubber_stripped"
+    },
+    "variants": {
+        "normal": [{}],
+        "inventory": [{}],
+        "axis": {
+            "none": { "model": "sau:rubber_stripped_bark" },
+            "x"   : { "x": 90, "y": 90 },
+            "y"   : { },
+            "z"   : { "x": 90 }
+        }
+    }
+}

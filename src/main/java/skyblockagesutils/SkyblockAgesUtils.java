@@ -1,19 +1,15 @@
 package skyblockagesutils;
 
+import org.apache.logging.log4j.Logger;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
-import net.minecraft.block.*;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-
-import org.apache.logging.log4j.Logger;
-
-import init.BlockInit;
-import init.ItemInit;
+import skyblockagesutils.client.SauTab;
+import skyblockagesutils.proxy.*;
+import skyblockagesutils.recipes.ModRecipes;
 
 @Mod(modid = SkyblockAgesUtils.MODID, name = SkyblockAgesUtils.NAME, version = SkyblockAgesUtils.VERSION)
 public class SkyblockAgesUtils
@@ -22,7 +18,15 @@ public class SkyblockAgesUtils
     public static final String NAME = "Skyblock Ages Utils";
     public static final String VERSION = "1.0";
 
-    private static Logger logger;
+    public static Logger logger;
+    
+    public static final SauTab creativeTab = new SauTab();
+    
+    @Mod.Instance(MODID)
+    public static SkyblockAgesUtils instance;
+    
+    @SidedProxy(serverSide = "skyblockagesutils.proxy.CommonProxy", clientSide = "skyblockagesutils.proxy.ClientProxy")
+    public static CommonProxy proxy;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
@@ -35,17 +39,9 @@ public class SkyblockAgesUtils
     {
         // some example code
         logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
-        BlockInit()
+        ModRecipes.init();
     }
     
-    @SubscribeEvent
-    public static void onBlockRegister(RegistryEvent.Register<Block> event) {
-    	event.getRegistry().registerAll(BlockInit.BLOCKS.toArray( new Block[0] ));
-    }
     
-    @SubscribeEvent
-    public static void onItemRegister(RegistryEvent.Register<Item> event) {
-    	event.getRegistry().registerAll(ItemInit.ITEMS.toArray( new Item[0] ));
-    }
     
 }

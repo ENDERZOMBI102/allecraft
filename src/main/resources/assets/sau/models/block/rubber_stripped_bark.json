@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "sau:blocks/log_rubber_stripped_side"
+  }
+}

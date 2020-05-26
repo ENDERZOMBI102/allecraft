@@ -4,9 +4,11 @@ tile.rubber_plank.name=Rubber Planks
 tile.rubber_stripped.name=Stripped Rubber Log
 tile.rubber_leaves.name=Rubber Leaves
 tile.faucelet.name=Faucelet
+tile.rubber_sapling.name=Rubber Sapling
 
 #items
 item.coagulated_latex.name=Coagulated Latex
+item.pan.name=Pan
 
 #GUI
 itemGroup.sau=Skyblock Ages Utils

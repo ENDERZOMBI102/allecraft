@@ -15,8 +15,9 @@ public class ModBlocks {
 	public static BlockOredict rubberLog = new BlockOredict(Material.WOOD, "rubber_log", "oreLog");
 	public static BlockOredict rubberPlank = new BlockOredict(Material.WOOD, "rubber_plank", "orePlanks");
 	public static BlockBase rubberStripped = new BlockBase(Material.WOOD, "rubber_stripped");
-	public static BlockOredict rubberLeaves = new BlockOredict(Material.LEAVES, "rubber_leaves", "oreLeaves");
+	public static leavesRubber rubberLeaves = new leavesRubber();
 	public static Faucelet faucelet = new Faucelet();
+	public static saplingRubber rubberSapling= new saplingRubber();
 	
 	@SuppressWarnings("deprecation")
 	public static void register(IForgeRegistry<Block> registry) {
@@ -25,6 +26,7 @@ public class ModBlocks {
 		registry.register( rubberStripped );
 		registry.register( rubberLeaves );
 		registry.register( faucelet );
+		registry.register( rubberSapling );
 		GameRegistry.registerTileEntity(faucelet.getTileEntityClass(), faucelet.getRegistryName().toString());
 	}
 
@@ -34,14 +36,16 @@ public class ModBlocks {
 		registry.register( rubberStripped.createItemBlock() );
 		registry.register( rubberLeaves.createItemBlock() );
 		registry.register( faucelet.createItemBlock() );
+		registry.register( rubberSapling.createItemBlock() );
 	}
 
 	public static void registerModels() {
-		rubberLog.registerItemModel( Item.getItemFromBlock(rubberLog) );
-		rubberPlank.registerItemModel( Item.getItemFromBlock(rubberPlank) );
-		rubberStripped.registerItemModel( Item.getItemFromBlock(rubberStripped) );
-		rubberLeaves.registerItemModel( Item.getItemFromBlock(rubberLeaves) );
-		faucelet.registerItemModel( Item.getItemFromBlock(faucelet) );
+		rubberLog.registerItemModel( Item.getItemFromBlock( rubberLog ) );
+		rubberPlank.registerItemModel( Item.getItemFromBlock( rubberPlank ) );
+		rubberStripped.registerItemModel( Item.getItemFromBlock( rubberStripped ) );
+		rubberLeaves.registerItemModel( Item.getItemFromBlock( rubberLeaves ) );
+		faucelet.registerItemModel( Item.getItemFromBlock( faucelet ) );
+		rubberSapling.registerItemModel( Item.getItemFromBlock( rubberSapling ) );
 	}
 
 }

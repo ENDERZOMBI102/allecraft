@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent.OnConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -34,5 +35,14 @@ public class Handlers {
 		ModBlocks.registerModels();
 		SkyblockAgesUtils.logger.info("registered all models!");
 	}
+    
+    @SubscribeEvent
+    public void onConfigChangedEvent(OnConfigChangedEvent event)
+    {
+        if (event.getModID().equals(SkyblockAgesUtils.MODID))
+        {
+            Configs.sync();
+        }
+    }
     
 }

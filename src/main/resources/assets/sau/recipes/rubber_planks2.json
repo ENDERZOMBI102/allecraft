@@ -2,7 +2,7 @@
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
 		{
-			"item": "sau:rubber_log"
+			"item": "sau:rubber_stripped"
 		}
 	],
 	"result": {

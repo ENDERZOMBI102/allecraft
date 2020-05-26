@@ -1,0 +1,6 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "sau:items/coagulated_latex"
+	}
+}

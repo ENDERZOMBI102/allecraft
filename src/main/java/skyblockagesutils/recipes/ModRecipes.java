@@ -13,7 +13,6 @@ public class ModRecipes {
 		/***OREDICT***/
 		ModBlocks.rubberLog.initOreDict();
 		ModBlocks.rubberPlank.initOreDict();
-		ModBlocks.rubberLeaves.initOreDict();
 		/***FURNACES**/
 		//rubber log to charcoal
 		GameRegistry.addSmelting(ModBlocks.rubberLog, new ItemStack(Items.COAL, 1, 1), 0.0f);

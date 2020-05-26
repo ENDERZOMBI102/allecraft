@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "sau:blocks/leaves_rubber_fancy"
-  }
-}

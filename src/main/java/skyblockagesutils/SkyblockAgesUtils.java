@@ -1,13 +1,13 @@
 package skyblockagesutils;
 
 import org.apache.logging.log4j.Logger;
-import net.minecraft.init.Blocks;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import skyblockagesutils.client.SauTab;
+import skyblockagesutils.items.ModItems;
 import skyblockagesutils.proxy.*;
 import skyblockagesutils.recipes.ModRecipes;
 
@@ -37,9 +37,12 @@ public class SkyblockAgesUtils
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-        // some example code
-        logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        logger.info("registring recipes..");
         ModRecipes.init();
+        logger.info("recipes registered!");
+        logger.info("special setups..");
+        ModItems.specialSetup();
+        logger.info("special setup finished!");
     }
     
     

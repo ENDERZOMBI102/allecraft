@@ -27,12 +27,12 @@ public class saplingRubber extends BlockSapling implements IGrowable{
 	}
 	
 	public void registerItemModel(Item itemBlock) {
-		SkyblockAgesUtils.proxy.registerItemRenderer(itemBlock, 0, this.getLocalizedName());
+		SkyblockAgesUtils.proxy.registerItemRenderer( itemBlock, 0, this.getUnlocalizedName() );
 		SkyblockAgesUtils.logger.debug("registered item model for block \"rubber_sapling\"");
 	}
 	
 	public Item createItemBlock() {
-		return new ItemBlock(this).setRegistryName(getRegistryName());
+		return new ItemBlock(this).setRegistryName( getRegistryName() );
 	}
 	
 	@Override

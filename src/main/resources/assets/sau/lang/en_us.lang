@@ -9,6 +9,8 @@ tile.rubber_sapling.name=Rubber Sapling
 #items
 item.coagulated_latex.name=Coagulated Latex
 item.pan.name=Pan
+item.net.name=Net
+item.reinforced_net.name=Reinforced Net
 
 #GUI
 itemGroup.sau=Skyblock Ages Utils

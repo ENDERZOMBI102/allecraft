@@ -1,16 +1,21 @@
-package skyblockagesutils.items;
+package skyblockagesutils.items.pan;
 
 import java.util.ArrayList;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ICapabilityProvider;
+import net.minecraftforge.items.IItemHandler;
 import skyblockagesutils.SkyblockAgesUtils;
 import skyblockagesutils.utils.Configs;
 
@@ -26,8 +31,6 @@ public class ItemPan extends Item {
         this.setCreativeTab(SkyblockAgesUtils.creativeTab);
         this.setRegistryName("pan");
         this.setUnlocalizedName("pan");
-        
-        setupDrops();
 	}
 	
     @Override
@@ -42,34 +45,34 @@ public class ItemPan extends Item {
 				// if we get a number lower than the chance, drop the corresponding item
 				if ( Math.random() < chanceList.get( i ) ) {
 					// drop the item
-					player.inventory.addItemStackToInventory( new ItemStack( Item.getByNameOrId( id ) ) );
-					// if the config says no multiple drops, we can't drop
+					player.inventory.addItemStackToInventory( getItemFromText( id ) );
+					// if the config says no multiple drops, we can't drop multiple times
 					if ( ! Configs.panDropsMultipleItems ) break;
 				}
 				i++;
 			}
+		} else {
+			player.openGui(SkyblockAgesUtils.instance, 0, world, 0, 0, 0);
 		}
 		return EnumActionResult.SUCCESS;
     }
     
-    public static void setupDrops() {
-    	SkyblockAgesUtils.logger.info("loading drops for pan!");
-    	// create variables
-    	String[] singleItems = Configs.panDropList.split(";");
-    	String[] tmp = null;
-    	try {
-    		// for every drop-chance
-	    	for (String i : singleItems ) {
-	    		tmp = i.split(",");// divide them
-	    		dropList.add( tmp[0] );// drop
-	    		chanceList.add( Double.parseDouble( tmp[1] ) );// chance
-	    	}
-    	} catch (NumberFormatException e) {
-    		// ERROR :(
-    		SkyblockAgesUtils.logger.error("Found invalid double number at item {}! pls correct!".replace("{}", tmp[0]));
-    		return;
-    	}
-    	// success!
-    	SkyblockAgesUtils.logger.info("successuffly loaded pan drops!");
+    private ItemStack getItemFromText( String id ) {
+    	// remove <
+    	if ( id.charAt(0) == '<' ) id = id.replaceFirst("<", "");
+    	//remove >
+    	if ( id.charAt( id.length()-1 ) == '>' ) id = id.replaceFirst(">", "");
+    	// return a new itemstack from that id
+    	return new ItemStack( Item.getByNameOrId( id ) );
+    }
+    
+    public void registerItemModel() {
+		SkyblockAgesUtils.proxy.registerItemRenderer( this, 0, this.getUnlocalizedName() );
+		SkyblockAgesUtils.logger.debug( "registered model for item \"{}\"".replace("{}", this.getUnlocalizedName() ) );
+	}
+	
+	@Override
+    public ICapabilityProvider initCapabilities(ItemStack stack, NBTTagCompound compound) {
+        return new PanInventoryProvider();
     }
 }

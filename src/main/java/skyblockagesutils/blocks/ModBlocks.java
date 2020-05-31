@@ -12,8 +12,8 @@ public class ModBlocks {
 	
 	public static ArrayList<BlockBase> BLOCKS = new ArrayList<>();
 	
-	public static BlockOredict rubberLog = new BlockOredict(Material.WOOD, "rubber_log", "oreLog");
-	public static BlockOredict rubberPlank = new BlockOredict(Material.WOOD, "rubber_plank", "orePlanks");
+	public static BlockBase rubberLog = new BlockBase(Material.WOOD, "rubber_log");
+	public static BlockBase rubberPlank = new BlockBase(Material.WOOD, "rubber_plank");
 	public static BlockBase rubberStripped = new BlockBase(Material.WOOD, "rubber_stripped");
 	public static leavesRubber rubberLeaves = new leavesRubber();
 	public static Faucelet faucelet = new Faucelet();

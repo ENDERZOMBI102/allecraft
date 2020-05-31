@@ -3,7 +3,6 @@ package skyblockagesutils.world.generation.generators;
 import java.util.Random;
 
 import skyblockagesutils.blocks.ModBlocks;
-import skyblockagesutils.blocks.saplingRubber;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

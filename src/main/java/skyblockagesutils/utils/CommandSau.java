@@ -43,7 +43,7 @@ public class CommandSau implements ICommand{
 				ITextComponent component = null;
 				component.appendText("reloading configs...");
 				sender.sendMessage( component );
-				Configs.syncFromCommand();
+				Configs.sync();
 				component = null;
 				component.appendText("finished reloading!");
 				sender.sendMessage( component );

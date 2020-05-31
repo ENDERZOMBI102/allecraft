@@ -1,26 +1,6 @@
 {
-	"forge_marker": 1,
-	"defaults": {
-		"textures": {
-			"all": "sau:blocks/leaves_rubber_fancy"
-		}
-	},
-	"variants": {
-		"normal": {
-			"model": "leaves",
-			"textures": {"all": "sau:blocks/leaves_rubber_fancy"}
-		},
-		"inventory": {
-			"model": "leaves",
-			"textures": {"all": "sau:blocks/leaves_rubber_fancy"}
-		},
-		"check_decay": {
-			"true": {"model": "leaves","textures": {"all": "sau:blocks/leaves_rubber_fancy"}},
-			"false": {"model": "leaves","textures": {"all": "sau:blocks/leaves_rubber_fancy"}}
-		},
-		"decayable": {
-			"true": {"model": "leaves","textures": {"all": "sau:blocks/leaves_rubber_fancy"}},
-			"false": {"model": "leaves","textures": {"all": "sau:blocks/leaves_rubber_fancy"}}
-		}
-	}
+    "parent": "block/leaves",
+    "textures": {
+        "all": "sau:blocks/rubber_leaves"
+    }
 }

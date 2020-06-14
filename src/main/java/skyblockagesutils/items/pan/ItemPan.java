@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -13,9 +12,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.minecraftforge.items.IItemHandler;
 import skyblockagesutils.SkyblockAgesUtils;
 import skyblockagesutils.utils.Configs;
 
@@ -47,7 +44,7 @@ public class ItemPan extends Item {
 					// drop the item
 					player.inventory.addItemStackToInventory( getItemFromText( id ) );
 					// if the config says no multiple drops, we can't drop multiple times
-					if ( ! Configs.panDropsMultipleItems ) break;
+					if ( ! Configs.PanConfigs.panDropsMultipleItems ) break;
 				}
 				i++;
 			}

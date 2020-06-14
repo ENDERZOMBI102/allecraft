@@ -6,10 +6,12 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import org.lwjgl.opengl.Display;
 import skyblockagesutils.client.SauTab;
 import skyblockagesutils.items.ModItems;
 import skyblockagesutils.proxy.*;
 import skyblockagesutils.recipes.ModRecipes;
+import skyblockagesutils.utils.Configs;
 
 @Mod(modid = SkyblockAgesUtils.MODID, name = SkyblockAgesUtils.NAME, version = SkyblockAgesUtils.VERSION)
 public class SkyblockAgesUtils
@@ -32,6 +34,7 @@ public class SkyblockAgesUtils
     public void preInit(FMLPreInitializationEvent event)
     {
         logger = event.getModLog();
+        changeTitle();
     }
 
     @EventHandler
@@ -45,6 +48,11 @@ public class SkyblockAgesUtils
         logger.info("special setup finished!");
     }
     
-    
+    public void changeTitle() {
+    	String title = Configs.windowName;
+    	if ( ! title.equalsIgnoreCase("null") ) {
+    		Display.setTitle(title);
+    	}
+    }
     
 }

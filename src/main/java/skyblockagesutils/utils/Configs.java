@@ -47,6 +47,12 @@ public class Configs {
 		public static String netFishDropList = "<minecraft:cod>, 0.9;";
 	}
 	
+	@Comment({
+		"Use this setting to change the minecraft window title.",
+		"if set to \"null\" doesn't do anything"
+	})
+	public static String windowName = "null";
+	
 	// methods
 	// sync the config (from event)
 	public static void sync() {
@@ -54,7 +60,7 @@ public class Configs {
 		ConfigManager.sync(SkyblockAgesUtils.MODID, Type.INSTANCE);
 		SkyblockAgesUtils.logger.info("config file reloaded!");
 		SkyblockAgesUtils.logger.info("reloading pan drops..");
-		ItemPan.setupDrops();
+		//ItemPan.setupDrops();
 		SkyblockAgesUtils.logger.info("finished reloading configs!");
 	}
 }
